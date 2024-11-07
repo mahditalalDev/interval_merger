@@ -27,3 +27,14 @@ def read_lists_from_user():
         sublist=list(map(int,sublist.split()))
         list_of_lists.append(sublist)
     return list_of_lists
+def merge_list(user_list):
+    """
+    The function merges overlapping intervals and returns a list of the merged intervals
+
+    Args:
+        user_list (list): list of lists entered by the user
+
+    Returns:
+        merged_list: returns a list of the merged intervals
+    """
+    
