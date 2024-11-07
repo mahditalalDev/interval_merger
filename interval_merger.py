@@ -13,3 +13,17 @@ This function reads a list of intervals from user input and merges overlapping o
 Note: No input validation is not performed.
 
 """
+def read_lists_from_user():
+    """ 
+    reads user list inputs and append it into the empty list
+
+    Returns:
+        list of lists: lists of sub_lists
+    """
+    list_of_lists=[]
+    counter=int(input("How many intervals would you like to enter? "))
+    for _ in range (counter):
+        sublist=input("Enter an interval (start and end) separated by a space: ")
+        sublist=list(map(int,sublist.split()))
+        list_of_lists.append(sublist)
+    return list_of_lists
