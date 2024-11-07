@@ -37,4 +37,20 @@ def merge_list(user_list):
     Returns:
         merged_list: returns a list of the merged intervals
     """
-    
+    # Sort list by the starting point , 
+    # stackoverglow:https://stackoverflow.com/questions/31305564/understanding-lambdas-sort-function-in-python
+    user_list.sort(key=lambda x: x[0]) 
+    merged_list = [user_list[0]]  #initialaize merged list to take the first elemnt of user list
+
+    for i in range(1, len(list)):
+        last_interval = merged_list[-1]     #* put the last element in interval merged list i
+        current_interval = user_list[i]
+
+    # check if its overlapping
+    if last_interval[0] < current_interval[1] and last_interval[1] > current_interval[0]:
+        last_interval[1] = max(last_interval[1], current_interval[1])
+    else:
+    # No overlap
+        merged_list.append(current_interval)
+
+    return merged_list
